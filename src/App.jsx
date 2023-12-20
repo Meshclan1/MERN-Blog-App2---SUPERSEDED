@@ -1,84 +1,19 @@
 import "./App.css";
+import IndexPage from "./components/IndexPage";
+import Layout from "./components/Layout";
+import { Routes, Route } from "react-router-dom";
+import LoginPage from "./components/LoginPage";
+import RegisterPage from "./components/RegisterPage";
 
 function App() {
   return (
-    <main>
-      <header>
-        <a href="" className="logo">
-          My Blog
-        </a>
-        <nav>
-          <a href="">Login</a>
-          <a href="">Register</a>
-        </nav>
-      </header>
-
-      <div className="post">
-        <div className="image">
-          <img
-            src="https://lp-cms-production.imgix.net/2023-08/-CantoiStock-975466162-RFC.jpg"
-            alt="Brazil"
-          ></img>
-        </div>
-        <div className="texts">
-          <h2>Brazil Trip Idea</h2>
-          <p className="info">
-            <a className="author">Ayo M.</a>
-            <time>2023-11-23 13:59</time>
-          </p>
-          <p className="summary">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
-            numquam illum quasi ad asperiores, laboriosam sapiente praesentium?
-            Harum debitis ea voluptas eveniet inventore sapiente animi,
-            excepturi illo consectetur quod natus!
-          </p>
-        </div>
-      </div>
-
-      <div className="post">
-        <div className="image">
-          <img
-            src="https://lp-cms-production.imgix.net/2023-08/-CantoiStock-975466162-RFC.jpg"
-            alt="Brazil"
-          ></img>
-        </div>
-        <div className="texts">
-          <h2>Brazil Trip Idea</h2>
-          <p className="info">
-            <a className="author">Ayo M.</a>
-            <time>2023-11-23 13:59</time>
-          </p>
-          <p className="summary">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
-            numquam illum quasi ad asperiores, laboriosam sapiente praesentium?
-            Harum debitis ea voluptas eveniet inventore sapiente animi,
-            excepturi illo consectetur quod natus!
-          </p>
-        </div>
-      </div>
-
-      <div className="post">
-        <div className="image">
-          <img
-            src="https://lp-cms-production.imgix.net/2023-08/-CantoiStock-975466162-RFC.jpg"
-            alt="Brazil"
-          ></img>
-        </div>
-        <div className="texts">
-          <h2>Brazil Trip Idea</h2>
-          <p className="info">
-            <a className="author">Ayo M.</a>
-            <time>2023-11-23 13:59</time>
-          </p>
-          <p className="summary">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
-            numquam illum quasi ad asperiores, laboriosam sapiente praesentium?
-            Harum debitis ea voluptas eveniet inventore sapiente animi,
-            excepturi illo consectetur quod natus!
-          </p>
-        </div>
-      </div>
-    </main>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<IndexPage />} />
+        <Route path={"/login"} element={<LoginPage />} />
+        <Route path={"/register"} element={<RegisterPage />} />
+      </Route>
+    </Routes>
   );
 }
 
